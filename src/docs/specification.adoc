@@ -1,0 +1,61 @@
+= Spring REST Doc Example
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+
+== Songs
+=== Request
+include::{snippets}/Songs - No Songs/http-request.adoc[]
+include::{snippets}/Songs - No Songs/curl-request.adoc[]
+Request-Body
+include::{snippets}/Songs - No Songs/request-body.adoc[]
+
+=== Response
+include::{snippets}/Songs - No Songs/http-response.adoc[]
+Response-Body
+include::{snippets}/Songs - No Songs/response-fields.adoc[]
+No Songs
+include::{snippets}/Songs - No Songs/response-body.adoc[]
+Single Song
+include::{snippets}/Songs - Single Song/response-body.adoc[]
+Multiple Songs
+include::{snippets}/Songs - Multiple Songs/response-body.adoc[]
+
+== Song by ID
+=== Request
+include::{snippets}/Song By Id - Song exists - performer/http-request.adoc[]
+include::{snippets}/Song By Id - Song exists - performer/curl-request.adoc[]
+Request-Body
+include::{snippets}/Song By Id - Song exists - performer/request-body.adoc[]
+
+=== Response
+include::{snippets}/Song By Id - Song exists - performer/response-fields.adoc[]
+Song found with performers
+include::{snippets}/Song By Id - Song exists - performer/http-response.adoc[]
+Song found with no performers
+include::{snippets}/Song By Id - Song exists - no performer/http-response.adoc[]
+Song not found
+include::{snippets}/Song By Id - Song does not exist/http-response.adoc[]
+Invalid Parameter
+include::{snippets}/Song By Id - Invalid id/response-fields.adoc[]
+include::{snippets}/Song By Id - Invalid id/http-response.adoc[]
+
+== Add Songs
+=== Request
+include::{snippets}/Add a song with no performers/http-request.adoc[]
+include::{snippets}/Add a song with performers/curl-request.adoc[]
+Request-Body
+include::{snippets}/Add a song with performers/request-fields.adoc[]
+Song with performers
+include::{snippets}/Add a song with performers/request-body.adoc[]
+Song with no performers
+include::{snippets}/Add a song with no performers/request-body.adoc[]
+
+=== Response
+Song added with performers
+include::{snippets}/Add a song with performers/http-response.adoc[]
+Song added with no performers
+include::{snippets}/Add a song with no performers/http-response.adoc[]
+Invalid request
+include::{snippets}/Add a song with missing information/response-fields.adoc[]
+include::{snippets}/Add a song with missing information/http-response.adoc[]
