@@ -1,10 +1,10 @@
 spring:
-    application:
-      name: openapi-demo
+  application:
+    name: openapi-demo
 springdoc:
-    paths-to-exclude: /**/internal/**
-    api-docs:
-      path: /specification/openapi
-      version: openapi_3_0
-    swagger-ui:
-      path: /specification/openapi/index.html
+  api-docs:
+    version: openapi_3_1
+    path: /api/documentation
+  swagger-ui:
+    path: /api/documentation/swagger-ui.html
+    groups-order: desc
