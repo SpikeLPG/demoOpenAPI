@@ -1,9 +1,20 @@
 package com.example.model;
 
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 
-public record Book(@NotBlank long id, @NotBlank String title, @NotBlank String author) {
+@Schema(name = "Book Schema")
+public record Book(
+        @NotBlank
+        @Schema(description = "Unique identifier of the book", example = "1")
+        long id,
+        @NotBlank
+                @Schema(description = "Title of the book", example = "Dune")
+        String title,
+        @NotBlank
+                @Schema(description = "Author of the book", example = "James Herbert")
+        String author) {
     //language=JSON
     public static final String SINGLE_BOOK = """
             { "id": 123, "title":"Fake title", "author": "Fake Author"}

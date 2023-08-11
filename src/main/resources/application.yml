@@ -8,3 +8,11 @@ springdoc:
   swagger-ui:
     disable-swagger-default-url: true
     path: /api/documentation/OpenAPI.html
+# Show specific details using scan and exclude configurations
+  group-configs:
+    - group: internal-docs
+      display-name: Internally Accessible Specification
+      packages-to-scan:
+        - com.example
+      packages-to-exclude:
+        - com.example.controller.song

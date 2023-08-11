@@ -10,7 +10,6 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class OpenApiConfig {
     public static final String PUBLIC_OPENAPI_DOC = "public-docs";
-    public static final String PRIVATE_OPENAPI_DOC = "internal-docs";
 
     public static final Info API_INFO = new Info()
             .title("Example API Documentation")
@@ -42,13 +41,14 @@ public class OpenApiConfig {
                 .build();
     }
 
-    @Bean
-    public GroupedOpenApi privateApi() {
-        return GroupedOpenApi.builder()
-                .group(PRIVATE_OPENAPI_DOC)
-                .displayName("Internally Accessible Specifications")
-                .packagesToScan("com.example")
-                .packagesToExclude("com.example.controller.song")
-                .build();
-    }
+//    Group configuration can be done in the application.yml or as a Bean
+//    @Bean
+//    public GroupedOpenApi privateApi() {
+//        return GroupedOpenApi.builder()
+//                .group(PRIVATE_OPENAPI_DOC)
+//                .displayName("Internally Accessible Specifications")
+//                .packagesToScan("com.example")
+//                .packagesToExclude("com.example.controller.song")
+//                .build();
+//    }
 }
