@@ -1,4 +1,4 @@
-package com.example.controller;
+package com.example.controller.book;
 
 import com.example.model.Book;
 import com.example.error.BookError;

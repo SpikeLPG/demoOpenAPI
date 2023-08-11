@@ -1,4 +1,4 @@
-package com.example.controller;
+package com.example.controller.song;
 
 import com.example.service.SongService;
 import com.example.model.SongRequest;

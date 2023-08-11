@@ -9,6 +9,8 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class OpenApiConfig {
+    public static final String PUBLIC_OPENAPI_DOC = "public-docs";
+    public static final String PRIVATE_OPENAPI_DOC = "internal-docs";
 
     public static final Info API_INFO = new Info()
             .title("Example API Documentation")
@@ -32,18 +34,21 @@ public class OpenApiConfig {
     @Bean
     public GroupedOpenApi publicApi() {
         return GroupedOpenApi.builder()
-                .group("public-docs")
+                .group(PUBLIC_OPENAPI_DOC)
                 .displayName("Publicly Accessible Specifications")
-                .pathsToExclude("/**/internal/**", "/**/songs/**")
+                .packagesToScan("com.example")
+                .pathsToExclude("/**/internal/**")
+                .packagesToExclude("com.example.controller.song")
                 .build();
     }
 
     @Bean
     public GroupedOpenApi privateApi() {
         return GroupedOpenApi.builder()
-                .group("internal-docs")
+                .group(PRIVATE_OPENAPI_DOC)
                 .displayName("Internally Accessible Specifications")
-                .pathsToExclude("/**/songs/**")
+                .packagesToScan("com.example")
+                .packagesToExclude("com.example.controller.song")
                 .build();
     }
 }

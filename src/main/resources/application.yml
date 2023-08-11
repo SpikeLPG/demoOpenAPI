@@ -6,5 +6,5 @@ springdoc:
     version: openapi_3_1
     path: /api/documentation
   swagger-ui:
-    path: /api/documentation/swagger-ui.html
-    groups-order: desc
+    disable-swagger-default-url: true
+    path: /api/documentation/OpenAPI.html
